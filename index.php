@@ -46,7 +46,7 @@
                 <?php
                 include 'connection.php';
 
-                // Fetch donors from the database
+                // Fetch donars from the database
                 $sql = "SELECT name, bloodtype, phone, gender, age, address FROM donars";
                 $result = mysqli_query($conn, $sql);
 

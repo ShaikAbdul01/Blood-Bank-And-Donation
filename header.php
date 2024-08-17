@@ -21,7 +21,7 @@
                             <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate Blood</a></li>
                             <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a Donar</a></li>
                             <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need Blood</a></li>
-                            <li><a>Contact</a></li>
+                            <!-- <li><a>Contact</a></li> -->
                         </ul>
                     </div>
                     <a class="btn btn-ghost normal-case text-sm lg:text-3xl">Blood Bank And Donation</a>
@@ -32,11 +32,11 @@
                         <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate Blood</a></li>
                         <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a Donar</a></li>
                         <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need Blood</a></li>
-                        <li><a>Contact</a></li>
+                        <!-- <li><a>Contact</a></li> -->
                     </ul>
                 </div>
                 <div class="">
-                    <a class="btn bg-blood-primary text-white">Login</a>
+                    <!-- <a class="btn bg-blood-primary text-white">Login</a> -->
                 </div>
             </div>
         </nav>
