@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 text-center">
-                <span class="text-sm text-gray-500 dark:text-gray-300 ">Shaik Abdul</a>. All Rights Reserved.
+                <span class="text-sm text-gray-500 dark:text-gray-300 ">Shaik Abdul Ahad</a>. All Rights Reserved 2024.
                 </span>
 
             </div>

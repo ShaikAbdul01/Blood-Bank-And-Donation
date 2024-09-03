@@ -73,20 +73,20 @@
             <?php
             if (isset($_POST['search'])) {
                 $bg = $_POST['blood'];
-                $sql = "SELECT * FROM donar_details WHERE donar_blood = '{$bg}' ORDER BY RAND() LIMIT 7";
+                $sql = "SELECT * FROM donars WHERE bloodtype = '{$bg}' ORDER BY RAND() LIMIT 7";
                 $result = mysqli_query($conn, $sql) or die("Query unsuccessful: " . mysqli_error($conn));
 
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <div class="my-4 p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                            <h3 class="text-lg font-medium text-gray-900"><?php echo $row['donar_name']; ?></h3>
+                            <h3 class="text-lg font-medium text-gray-900"><?php echo $row['name']; ?></h3>
                             <p class="text-gray-700">
-                                <b>Blood Group: </b><?php echo $row['donar_blood']; ?><br>
-                                <b>Mobile No.: </b><?php echo $row['donar_number']; ?><br>
-                                <b>Gender: </b><?php echo $row['donar_gender']; ?><br>
-                                <b>Age: </b><?php echo $row['donar_age']; ?><br>
-                                <b>Address: </b><?php echo $row['donar_address']; ?><br>
+                                <b>Blood Group: </b><?php echo $row['bloodtype']; ?><br>
+                                <b>Mobile No.: </b><?php echo $row['phone']; ?><br>
+                                <b>Gender: </b><?php echo $row['gender']; ?><br>
+                                <b>Age: </b><?php echo $row['age']; ?><br>
+                                <b>Address: </b><?php echo $row['address']; ?><br>
                             </p>
                         </div>
                         <?php

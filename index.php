@@ -105,7 +105,7 @@
                                 What should I do to prepare for blood donation?
                             </div>
                             <div class="collapse-content">
-                                <p>efore donating blood, ensure you are well-hydrated by drinking plenty of water. Eat a healthy meal, avoid fatty foods, and get a good night's sleep. Bring a valid ID and any necessary donor cards or paperwork.</p>
+                                <p>Before donating blood, ensure you are well-hydrated by drinking plenty of water. Eat a healthy meal, avoid fatty foods, and get a good night's sleep. Bring a valid ID and any necessary donor cards or paperwork.</p>
                             </div>
                         </div>
                         <div class="collapse collapse-arrow ">
