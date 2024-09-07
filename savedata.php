@@ -1,14 +1,11 @@
 <?php
-// savedata.php
 
-// Database connection
-include('connection.php'); // Make sure this file connects to your database
+include('connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
     $fullname = $_POST['fullname'];
     $mobileno = $_POST['mobileno'];
-    $emailid = $_POST['emailid']; // This should be corrected to match the correct form field name
+    $emailid = $_POST['emailid'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
     $blood_group = $_POST['blood_group'];

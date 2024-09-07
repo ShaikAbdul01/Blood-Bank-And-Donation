@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2024 at 05:49 PM
+-- Generation Time: Sep 07, 2024 at 08:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -83,7 +83,8 @@ INSERT INTO `donars` (`id`, `name`, `bloodtype`, `phone`, `email`, `gender`, `ag
 (13, 'Imran Khan', 'A+', '01777665544', 'imran.khan@example.com', 'Male', 30, 'Dhaka, Bangladesh'),
 (14, 'Rima Begum', 'O-', '01666554433', 'rima.begum@example.com', 'Female', 25, 'Chattogram, Bangladesh'),
 (15, 'Anwar Hossain', 'B-', '01555443322', 'anwar.hossain@example.com', 'Male', 34, 'Dhaka, Bangladesh'),
-(18, 'Mohammad Ali', 'A+', '01568965725', 'ali@gmail.com', 'male', 22, 'Sitakunda,Chattagram');
+(18, 'Mohammad Ali', 'A+', '01568965725', 'ali@gmail.com', 'male', 22, 'Sitakunda,Chattagram'),
+(19, 'Tareq Hossen', 'O+', '01860605443', 'mdtareq213013@gmail.com', 'male', 24, 'Sitakunda,Chattagram');
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,7 @@ ALTER TABLE `blood`
 -- AUTO_INCREMENT for table `donars`
 --
 ALTER TABLE `donars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `donar_details`
