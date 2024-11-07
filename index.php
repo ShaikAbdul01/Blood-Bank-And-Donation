@@ -36,15 +36,20 @@
     </style>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins">  
     <?php include('header.php'); ?>
     <main class="md:container md:mx-auto">
         <!-- Blood Donar Names -->
         <section class="my-24">
             <h3 class="text-5xl mb-12 font-semibold text-center">Blood <span class="text-blood-primary">Donor Names</span></h3>
             <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <?php
+// Attempt to connect to the database
+$conn = mysqli_connect("localhost", "root", "", "blood_donation");
+?>
+
                 <?php
-                include 'connection.php';
+              
 
                 // Fetch donars from the database
                 $sql = "SELECT name, bloodtype, phone, gender, age, address FROM donars";
