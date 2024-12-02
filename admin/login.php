@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "No admin found with this email.";
         }
     } else {
-        echo "Email or password is missing.";
+        echo "";
     }
 
     // Close the connection

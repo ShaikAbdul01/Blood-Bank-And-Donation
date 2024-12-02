@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2024 at 08:14 AM
+-- Generation Time: Dec 01, 2024 at 04:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `blood_donation`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `email`, `password`) VALUES
+(1, 'shaik@gmail.com', 'shaik@11'),
+(2, 'abdul@gmail.com', 'abdul@12'),
+(3, 'ahad@gmail.com', 'ahad@13');
 
 -- --------------------------------------------------------
 
@@ -45,6 +66,30 @@ INSERT INTO `blood` (`blood_id`, `blood_group`) VALUES
 (6, 'A-'),
 (7, 'AB+'),
 (8, 'AB-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `message` text NOT NULL,
+  `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `name`, `email`, `phone`, `message`, `submitted_at`) VALUES
+(1, 'Shaik Abdul Ahad', 'shaik.abdul.ahad.001@gmail.com', '01642756988', 'Heroes come in all forms. By donating blood, you join a dedicated community committed to saving lives. Your single donation can help multiple patients in need, making you a hero in their eyes.\r\n\r\n\r\n', '2024-11-27 09:52:23'),
+(2, 'Abdul Ahad', 'shaikabdulahad2001@gmail.com', '0652756988', 'you join a dedicated community committed to saving lives. Your single donation can help multiple patients in need, making you a hero in their eyes.\r\n\r\n\r\n', '2024-11-27 09:59:22'),
+(8, 'Abdul', 'abdulahad2@gmail.com', '01846545583', 'The need for blood can spike. Regular donations ensure that blood banks are prepared for these emergencies, providing critical support when it\'s needed most. Moreover', '2024-11-28 13:59:04');
 
 -- --------------------------------------------------------
 
@@ -84,7 +129,9 @@ INSERT INTO `donars` (`id`, `name`, `bloodtype`, `phone`, `email`, `gender`, `ag
 (14, 'Rima Begum', 'O-', '01666554433', 'rima.begum@example.com', 'Female', 25, 'Chattogram, Bangladesh'),
 (15, 'Anwar Hossain', 'B-', '01555443322', 'anwar.hossain@example.com', 'Male', 34, 'Dhaka, Bangladesh'),
 (18, 'Mohammad Ali', 'A+', '01568965725', 'ali@gmail.com', 'male', 22, 'Sitakunda,Chattagram'),
-(19, 'Tareq Hossen', 'O+', '01860605443', 'mdtareq213013@gmail.com', 'male', 24, 'Sitakunda,Chattagram');
+(19, 'Tareq Hossen', 'O+', '01860605443', 'mdtareq213013@gmail.com', 'male', 24, 'Sitakunda,Chattagram'),
+(21, 'Mohammad Rayhan', 'AB+', '01466525725', 'rayhan@gmail.com', 'male', 33, 'Muradpur,Chattagram'),
+(22, 'Mohammad Rayhan', 'AB+', '01466525725', 'rayhan@gmail.com', 'male', 33, 'Muradpur,Chattagram');
 
 -- --------------------------------------------------------
 
@@ -128,15 +175,60 @@ INSERT INTO `donar_details` (`donar_id`, `donar_name`, `donar_number`, `donar_ma
 (18, 'Habib Ullah', '1895214785', 'habib@gmail.com', 32, 'Male', 'AB+', 'Kotwali,Chittagong'),
 (19, 'Sumaiya Yasmin', '1845523147', 'sumaiya@gmail.com', 26, 'Female', 'O-', 'Patenga,Chittagong');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `feedback` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `name`, `feedback`, `created_at`, `email`) VALUES
+(12, 'Abdul Karim', 'This service is a lifesaver! I found a blood donor for my brother in no time. Thank you!', '2024-11-27 09:26:34', 'abdul.karim@gmail.com'),
+(13, 'Fatima Akhter', 'The website is very easy to use, and the donor database is extensive. Highly recommended!', '2024-11-27 09:26:34', 'fatima.akhter@yahoo.com'),
+(14, 'Shamim Hossain', 'Great initiative. It made finding a donor in my locality super quick and hassle-free.', '2024-11-27 09:26:34', 'shamim.hossain@gmail.com'),
+(15, 'Sumaiya Yasmin', 'This platform helped me save a life. I will forever be grateful for this service.', '2024-11-27 09:26:34', 'sumaiya.yasmin@yahoo.com'),
+(16, 'Rafiq Ahmed', 'I love how organized the donor information is. It’s a great platform for emergencies.', '2024-11-27 09:26:34', 'rafiq.ahmed@gmail.com'),
+(17, 'Nasima Begum', 'Thank you for creating such a user-friendly platform. It is so easy to navigate.', '2024-11-27 09:26:34', 'nasima.begum@yahoo.com'),
+(18, 'Tanvir Rahman', 'I was skeptical at first, but this service really works. Found a donor within hours.', '2024-11-27 09:26:34', 'tanvir.rahman@gmail.com'),
+(19, 'Mitu Chowdhury', 'This is such a noble initiative. It makes the process of finding blood donors seamless.', '2024-11-27 09:26:34', 'mitu.chowdhury@yahoo.com'),
+(20, 'Imran Hossain', 'I appreciate the effort behind this project. It’s a blessing for those in need.', '2024-11-27 09:26:34', 'imran.hossain@gmail.com'),
+(21, 'Jahanara Begum', 'As a donor, I find it convenient to stay connected with people in need. A great idea!', '2024-11-27 09:26:34', 'jahanara.begum@yahoo.com'),
+(22, 'Shaik Abdul Ahad', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore ducimus, ad laudantium adipisci id.', '2024-11-27 09:27:27', 'shaik.abdul.ahad.001@gmail.com'),
+(23, 'Abdul', 'The need for blood can spike. Regular donations ensure that blood banks are prepared for these emergencies, providing critical support when it\'s needed most. Moreover', '2024-11-28 13:58:24', 'abdulahad2@gmail.com');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `blood`
 --
 ALTER TABLE `blood`
   ADD PRIMARY KEY (`blood_id`);
+
+--
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donars`
@@ -151,8 +243,20 @@ ALTER TABLE `donar_details`
   ADD PRIMARY KEY (`donar_id`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blood`
@@ -161,16 +265,28 @@ ALTER TABLE `blood`
   MODIFY `blood_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `donars`
 --
 ALTER TABLE `donars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `donar_details`
 --
 ALTER TABLE `donar_details`
   MODIFY `donar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

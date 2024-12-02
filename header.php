@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
 </head>
+
 <body>
-     <header class="md:container md:mx-auto">
+    <header class="md:container md:mx-auto">
         <nav>
             <div class="navbar bg-base-100">
                 <div class="flex-1 ">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </label>
-                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-base shadow bg-base-100 rounded-box w-52">
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-base shadow bg-base-100 rounded-box w-52">
                             <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/index.php">Home</a></li>
-                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate Blood</a></li>
-                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a Donar</a></li>
-                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need Blood</a></li>
-                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/contact_us.php">Contact</a></li>
+                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate
+                                    Blood</a></li>
+                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a
+                                    Donar</a></li>
+                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need
+                                    Blood</a></li>
+                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/contact_us.php">Contact</a>
+                            </li>
+                            <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/admin/login.php">Login</a>
+                            </li>
                         </ul>
                     </div>
                     <a class="btn btn-ghost normal-case text-sm lg:text-3xl">Blood Bank And Donation</a>
@@ -29,10 +40,15 @@
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu text-base menu-horizontal px-1">
                         <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/index.php">Home</a></li>
-                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate Blood</a></li>
-                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a Donar</a></li>
-                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need Blood</a></li>
+                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/why_should.php">Why Donate
+                                Blood</a></li>
+                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/donate_blood.php">Become a
+                                Donar</a></li>
+                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/need_blood.php">Need Blood</a>
+                        </li>
                         <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/contact_us.php">Contact</a></li>
+                        <li><a href="http://localhost/Projects/Blood-Bank-And-Donation/admin/login.php">Login</a></li>
+
 
                     </ul>
                 </div>
@@ -53,7 +69,9 @@
                             Lifesaving Blood Donors
                         </h2>
                         <p>
-                            Heroes come in all forms. By donating blood, you join a dedicated community committed to saving lives. Your single donation can help multiple patients in need, making you a hero in their eyes.
+                            Heroes come in all forms. By donating blood, you join a dedicated community committed to
+                            saving lives. Your single donation can help multiple patients in need, making you a hero in
+                            their eyes.
                         </p>
                         <button class="btn bg-blood-primary text-white">Purchase</button>
                     </div>
@@ -77,7 +95,9 @@
                             – Donate Blood and Save Lives
                         </h2>
                         <p>
-                            No matter how small it may seem, your blood donation has the power to create a significant impact. Each drop can contribute to saving lives, whether it’s for a child battling cancer, a mother during childbirth, or a patient undergoing surgery.
+                            No matter how small it may seem, your blood donation has the power to create a significant
+                            impact. Each drop can contribute to saving lives, whether it’s for a child battling cancer,
+                            a mother during childbirth, or a patient undergoing surgery.
                         </p>
                         <button class="btn bg-blood-primary text-white">Purchase</button>
                     </div>
@@ -102,7 +122,9 @@
                             During Emergency Situations
                         </h2>
                         <p>
-                            During emergencies and natural disasters, the demand for blood increases dramatically. Your timely donation ensures that hospitals and clinics are well-equipped to handle crises and save lives when every second counts.
+                            During emergencies and natural disasters, the demand for blood increases dramatically. Your
+                            timely donation ensures that hospitals and clinics are well-equipped to handle crises and
+                            save lives when every second counts.
 
                         </p>
                         <button class="btn bg-blood-primary text-white">Purchase</button>
@@ -127,7 +149,9 @@
                             Donating Blood Regularly
                         </h2>
                         <p>
-                            Regular blood donations are vital to maintaining a steady supply for those in need. By making blood donation a regular habit, you continuously contribute to the well-being of patients and help build a healthier community.
+                            Regular blood donations are vital to maintaining a steady supply for those in need. By
+                            making blood donation a regular habit, you continuously contribute to the well-being of
+                            patients and help build a healthier community.
 
                         </p>
                         <button class="btn bg-blood-primary text-white">Purchase</button>
@@ -145,4 +169,5 @@
         </div>
     </header>
 </body>
+
 </html>
