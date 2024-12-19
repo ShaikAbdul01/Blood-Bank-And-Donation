@@ -93,7 +93,6 @@
                 </div>
             </div>
             <?php
-            // Include database connection file
             include 'connection.php';
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -103,23 +102,16 @@
                 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
                 $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-                // Check if form fields are empty
                 if (!empty($name) && !empty($email) && !empty($phone) && !empty($message)) {
-                    // Insert form data into the contact_us table
                     $query = "INSERT INTO contact_us (name, email, phone, message) VALUES ('$name', '$email', '$phone', '$message')";
-
                     if (mysqli_query($conn, $query)) {
-                        // Success message
                         echo "<p class='mt-4 text-green-500 text-center'>Your message has been sent successfully!</p>";
                     } else {
-                        // Error message
                         echo "<p class='mt-4 text-red-500 text-center'>Error: " . mysqli_error($conn) . "</p>";
                     }
                 } else {
                     echo "All fields are required!";
                 }
-
-                // Close the connection
                 mysqli_close($conn);
             }
             ?>

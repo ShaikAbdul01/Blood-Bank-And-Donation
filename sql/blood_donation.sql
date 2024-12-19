@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2024 at 04:53 PM
+-- Generation Time: Dec 19, 2024 at 05:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -129,9 +129,7 @@ INSERT INTO `donars` (`id`, `name`, `bloodtype`, `phone`, `email`, `gender`, `ag
 (14, 'Rima Begum', 'O-', '01666554433', 'rima.begum@example.com', 'Female', 25, 'Chattogram, Bangladesh'),
 (15, 'Anwar Hossain', 'B-', '01555443322', 'anwar.hossain@example.com', 'Male', 34, 'Dhaka, Bangladesh'),
 (18, 'Mohammad Ali', 'A+', '01568965725', 'ali@gmail.com', 'male', 22, 'Sitakunda,Chattagram'),
-(19, 'Tareq Hossen', 'O+', '01860605443', 'mdtareq213013@gmail.com', 'male', 24, 'Sitakunda,Chattagram'),
-(21, 'Mohammad Rayhan', 'AB+', '01466525725', 'rayhan@gmail.com', 'male', 33, 'Muradpur,Chattagram'),
-(22, 'Mohammad Rayhan', 'AB+', '01466525725', 'rayhan@gmail.com', 'male', 33, 'Muradpur,Chattagram');
+(19, 'Tareq Hossen', 'O+', '01860605443', 'mdtareq213013@gmail.com', 'male', 24, 'Sitakunda,Chattagram');
 
 -- --------------------------------------------------------
 
@@ -207,6 +205,40 @@ INSERT INTO `reviews` (`id`, `name`, `feedback`, `created_at`, `email`) VALUES
 (22, 'Shaik Abdul Ahad', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore ducimus, ad laudantium adipisci id.', '2024-11-27 09:27:27', 'shaik.abdul.ahad.001@gmail.com'),
 (23, 'Abdul', 'The need for blood can spike. Regular donations ensure that blood banks are prepared for these emergencies, providing critical support when it\'s needed most. Moreover', '2024-11-28 13:58:24', 'abdulahad2@gmail.com');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_singup`
+--
+
+CREATE TABLE `users_singup` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `gender` enum('Male','Female','Other') NOT NULL,
+  `age` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users_singup`
+--
+
+INSERT INTO `users_singup` (`id`, `name`, `email`, `password`, `phone`, `gender`, `age`, `address`) VALUES
+(1, 'Md. Rahman', 'md.rahman@gmail.com', 'password123', '01711223344', 'Male', 30, 'Dhaka, Bangladesh'),
+(2, 'Fatima Akter', 'fatima.akter@yahoo.com', 'securepass456', '01899887766', 'Female', 25, 'Chattogram, Bangladesh'),
+(3, 'Kamal Ahmed', 'kamal.ahmed@gmail.com', 'mypassword789', '01988776655', 'Male', 35, 'Dhaka, Bangladesh'),
+(4, 'Jahanara Begum', 'jahanara.begum@yahoo.com', 'pass56789', '01677665544', 'Female', 28, 'Sylhet, Bangladesh'),
+(5, 'Farhan Khan', 'farhan.khan@gmail.com', 'farhanpass123', '01566554433', 'Male', 32, 'Rajshahi, Bangladesh'),
+(6, 'Sadia Islam', 'sadia.islam@gmail.com', 'sadiasecure456', '01455443322', 'Female', 27, 'Khulna, Bangladesh'),
+(7, 'Rezaul Karim', 'rezaul.karim@yahoo.com', 'rezaulpass789', '01344332211', 'Male', 29, 'Barisal, Bangladesh'),
+(8, 'Nazma Begum', 'nazma.begum@gmail.com', 'nazmapass234', '01233221100', 'Female', 26, 'Chattogram, Bangladesh'),
+(9, 'Tarek Ahmed', 'tarek.ahmed@yahoo.com', 'tarekpass456', '01122110099', 'Male', 31, 'Mymensingh, Bangladesh'),
+(10, 'Salma Akhter', 'salma.akhter@gmail.com', 'salmapass567', '01011009988', 'Female', 24, 'Dhaka, Bangladesh'),
+(11, 'Abdul Ahad', 'abdul@gmail.com', 'abdul@gmail.com', '01652856988', 'Male', 24, 'Bangladesh');
+
 --
 -- Indexes for dumped tables
 --
@@ -249,6 +281,13 @@ ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users_singup`
+--
+ALTER TABLE `users_singup`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -274,7 +313,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `donars`
 --
 ALTER TABLE `donars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `donar_details`
@@ -287,6 +326,12 @@ ALTER TABLE `donar_details`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `users_singup`
+--
+ALTER TABLE `users_singup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

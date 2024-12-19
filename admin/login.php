@@ -98,41 +98,23 @@
             </div>
 
             <?php
-            // Start the session to store session variables
             session_start();
-
-            // Include the database connection file
-            include 'connection.php';  // Ensure this contains your correct database connection details
-            
+            include 'connection.php';
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Check if the form data exists
                 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['role'])) {
-                    // Get the form data
                     $email = mysqli_real_escape_string($conn, $_POST['email']);
                     $password = mysqli_real_escape_string($conn, $_POST['password']);
                     $role = mysqli_real_escape_string($conn, $_POST['role']);
-
-                    // Check if the role is Admin or Donor
                     if ($role == "admin") {
-                        // SQL query to check if the admin exists
                         $query = "SELECT * FROM admins WHERE email = '$email'";
-
-                        // Execute the query
                         $result = mysqli_query($conn, $query);
-
                         if (mysqli_num_rows($result) > 0) {
-                            // Admin found, now check the password
                             $row = mysqli_fetch_assoc($result);
-
-                            // Directly compare the password (no hashing used)
                             if ($password == $row['password']) {
-                                // Set session variables for the logged-in admin
                                 $_SESSION['id'] = $row['id'];
                                 $_SESSION['email'] = $row['email'];
-                                $_SESSION['loggedin'] = true;  // Set this to indicate the user is logged in
-            
-                                // Redirect to the admin dashboard
-                                header("Location: dashboard.php");  // Replace with the actual dashboard page
+                                $_SESSION['loggedin'] = true;
+                                header("Location: dashboard.php");
                                 exit();
                             } else {
                                 echo "<p class='mt-4 text-red-500 text-center'>Invalid password.</p>";
@@ -141,25 +123,15 @@
                             echo "<p class='mt-4 text-red-500 text-center'>No admin found with this email.</p>";
                         }
                     } elseif ($role == "donor") {
-                        // SQL query to check if the donor exists
                         $query = "SELECT * FROM users_singup WHERE email = '$email'";
-
-                        // Execute the query
                         $result = mysqli_query($conn, $query);
-
                         if (mysqli_num_rows($result) > 0) {
-                            // Donor found, now check the password
                             $row = mysqli_fetch_assoc($result);
-
-                            // Directly compare the password (no hashing used)
                             if ($password == $row['password']) {
-                                // Set session variables for the logged-in donor
                                 $_SESSION['id'] = $row['id'];
                                 $_SESSION['email'] = $row['email'];
-                                $_SESSION['loggedin'] = true;  // Set this to indicate the user is logged in
-            
-                                // Redirect to the donor dashboard (or other page)
-                                header("Location: index.php");  // Replace with the actual donor dashboard page
+                                $_SESSION['loggedin'] = true;
+                                header("Location: index.php");
                                 exit();
                             } else {
                                 echo "<p class='mt-4 text-red-500 text-center'>Invalid password.</p>";
@@ -171,8 +143,6 @@
                 } else {
                     echo "<p class='mt-4 text-red-500 text-center'>Please fill all fields.</p>";
                 }
-
-                // Close the connection
                 mysqli_close($conn);
             }
             ?>

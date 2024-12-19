@@ -55,7 +55,8 @@
                         $result = mysqli_query($conn, $sql) or die("Query unsuccessful.");
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                            <option value="<?php echo $row['blood_group']; ?>"><?php echo $row['blood_group']; ?></option>
+                            <option value="<?php echo $row['blood_group']; ?>">
+                                <?php echo $row['blood_group']; ?></option>
                         <?php } ?>
                     </select>
                 </div>

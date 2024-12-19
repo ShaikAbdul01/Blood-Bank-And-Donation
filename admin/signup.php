@@ -123,15 +123,11 @@ include 'connection.php';  // Ensure this contains your correct database connect
                 <p>Already have an account? <a href="login.php" class="text-blood-primary">Login here</a>.</p>
             </div>
             <?php
-            // The session_start() call should be at the top, before any HTML output
-            
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Check if the form data exists
                 if (
                     isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) &&
                     isset($_POST['phone']) && isset($_POST['gender']) && isset($_POST['age']) && isset($_POST['address'])
                 ) {
-                    // Get the form data
                     $name = mysqli_real_escape_string($conn, $_POST['name']);
                     $email = mysqli_real_escape_string($conn, $_POST['email']);
                     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -139,29 +135,23 @@ include 'connection.php';  // Ensure this contains your correct database connect
                     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
                     $age = mysqli_real_escape_string($conn, $_POST['age']);
                     $address = mysqli_real_escape_string($conn, $_POST['address']);
-                    $role = 'donor';  // Set the role to "donor" directly
+                    $role = 'donor'; 
             
-                    // Check if the user with the same email already exists
                     $check_email_query = "SELECT * FROM users_singup WHERE email = '$email'";
                     $result = mysqli_query($conn, $check_email_query);
 
                     if (mysqli_num_rows($result) > 0) {
-                        // Email already exists
                         echo "<p class='text-red-500 text-center'>Email is already registered. Please login.</p>";
                     } else {
-                        // Insert the new user into the database with plain text password
                         $query = "INSERT INTO users_singup (name, email, password, phone, gender, age, address) 
                           VALUES ('$name', '$email', '$password', '$phone', '$gender', '$age', '$address')";
 
                         if (mysqli_query($conn, $query)) {
-                            // User registration successful
                             echo "<p class='text-green-500 text-center'>Registration successful! Please <a href='login.php' class='text-blood-primary'>login</a>.</p>";
                         } else {
                             echo "<p class='text-red-500 text-center'>Error: " . mysqli_error($conn) . "</p>";
                         }
                     }
-
-                    // Close the connection
                     mysqli_close($conn);
                 } else {
                     echo "<p class='text-red-500 text-center'>Please fill all fields.</p>";

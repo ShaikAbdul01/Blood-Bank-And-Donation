@@ -59,7 +59,6 @@
                 $page = isset($_GET['page']) ? $_GET['page'] : 1;
                 $offset = ($page - 1) * $limit;
 
-                // Query to fetch data from donars table
                 $sql = "SELECT * FROM donars LIMIT {$offset}, {$limit}";
                 $result = mysqli_query($conn, $sql);
 
@@ -106,7 +105,6 @@
 
                 <!-- Pagination -->
                 <?php
-                // Calculate total records and pages
                 $sql1 = "SELECT * FROM donars";
                 $result1 = mysqli_query($conn, $sql1);
                 if (mysqli_num_rows($result1) > 0) {
